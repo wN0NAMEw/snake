@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Security.Cryptography;
+using static System.Windows.Forms.DataFormats;
 
 namespace игра
 {
@@ -29,21 +31,8 @@ namespace игра
 
         private void registrate_Click(object sender, EventArgs e)
         {
-            string UN = username.Text;
-            string PW = password.Text;
-
-            if (string.IsNullOrWhiteSpace(UN) || string.IsNullOrWhiteSpace(PW))
-            {
-                status.Text = "Пожалуйста, введите имя пользователя и пароль.";
-                return;
-            }
-            if (UserExists(UN))
-            {
-                status.Text = "Пользователь с таким именем уже существует.";
-                return;
-            }
-            File.AppendAllText(UsersFilePath, $"{UN};{PW}{Environment.NewLine}");
-            status.Text = "Регистрация прошла успешно!";
+            reg_menu reg = new reg_menu();
+            reg.Show();
         }
 
         private void login_Click(object sender, EventArgs e)
@@ -60,14 +49,18 @@ namespace игра
             if (UN == AdminUsername && PW == AdminPassword)
             {
                 status.Text = "Добро пожаловать, администратор!";
-                // переход к админ-панели
+                ADM_menu heh = new ADM_menu();
+                heh.Show();
+                this.Hide();
                 return;
             }
 
             if (ValidateUser(UN, PW))
             {
                 status.Text = "Вход выполнен успешно!";
-                // переход к игровому меню
+                users_level ul = new users_level();
+                ul.Show();
+                this.Hide();
             }
             else
             {
@@ -75,23 +68,16 @@ namespace игра
             }
         }
 
-        private bool UserExists(string username)
-        {
-            return File.Exists(UsersFilePath) && File.ReadLines(UsersFilePath)
-                .Any(line => line.Split(';')[0] == username);
-        }
-
         private bool ValidateUser(string username, string password)
         {
             if (!File.Exists(UsersFilePath))
                 return false;
 
-            return File.ReadLines(UsersFilePath)
-                .Any(line =>
-                {
+            return File.ReadLines(UsersFilePath).Any(line =>
+            {
                     var parts = line.Split(';');
-                    return parts.Length == 2 && parts[0] == username && parts[1] == password;
-                });
+                    return parts.Length >= 2 && parts[0] == username && parts[1] == password;
+            });
         }
 
         private void username_TextChanged(object sender, EventArgs e)
