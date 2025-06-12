@@ -34,21 +34,65 @@ namespace игра
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(users_level));
+            skins = new System.Windows.Forms.Button();
+            back = new System.Windows.Forms.Button();
+            level1bt = new System.Windows.Forms.Button();
+            label1 = new Label();
             SuspendLayout();
+            // 
+            // skins
+            // 
+            skins.BackColor = Color.FromArgb(252, 228, 95);
+            resources.ApplyResources(skins, "skins");
+            skins.Name = "skins";
+            skins.UseVisualStyleBackColor = false;
+            // 
+            // back
+            // 
+            back.BackColor = Color.FromArgb(252, 228, 95);
+            resources.ApplyResources(back, "back");
+            back.Name = "back";
+            back.UseVisualStyleBackColor = false;
+            back.Click += back_Click;
+            // 
+            // level1bt
+            // 
+            level1bt.BackColor = Color.FromArgb(252, 228, 95);
+            resources.ApplyResources(level1bt, "level1bt");
+            level1bt.Name = "level1bt";
+            level1bt.UseVisualStyleBackColor = true;
+            level1bt.Click += level1bt_Click;
+            // 
+            // label1
+            // 
+            resources.ApplyResources(label1, "label1");
+            label1.BackColor = Color.FromArgb(252, 228, 95);
+            label1.Name = "label1";
+            label1.Click += label1_Click;
             // 
             // users_level
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Resources.bg;
+            Controls.Add(label1);
+            Controls.Add(level1bt);
+            Controls.Add(back);
+            Controls.Add(skins);
             MaximizeBox = false;
             MdiChildrenMinimizedAnchorBottom = false;
             MinimizeBox = false;
             Name = "users_level";
             ShowIcon = false;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private System.Windows.Forms.Button skins;
+        private System.Windows.Forms.Button back;
+        private System.Windows.Forms.Button level1bt;
+        private Label label1;
     }
 }

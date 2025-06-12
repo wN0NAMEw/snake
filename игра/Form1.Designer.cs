@@ -54,8 +54,9 @@
             // countfood
             // 
             countfood.AutoSize = true;
+            countfood.BackColor = Color.FromArgb(185, 122, 87);
             countfood.Font = new Font("Segoe UI", 20F);
-            countfood.Location = new Point(4, 3);
+            countfood.Location = new Point(5, 5);
             countfood.Name = "countfood";
             countfood.Size = new Size(38, 46);
             countfood.TabIndex = 2;

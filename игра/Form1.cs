@@ -8,7 +8,7 @@ namespace игра
     public partial class game : Form
     {
         int count = 0;
-        private int speed = 1000;
+        private int speed = 600;
         int nap = 1;
         private Image originalImage;
         private List<PictureBox> snakeSegments = new List<PictureBox>();

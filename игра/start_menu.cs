@@ -16,8 +16,8 @@ namespace игра
     public partial class start_menu : Form
     {
         private const string UsersFilePath = "users.txt";
-        private const string AdminUsername = "admin"; // Имя администратора
-        private const string AdminPassword = "admin"; // Пароль для администратора
+        private const string AdminUsername = "asd"; // Имя администратора
+        private const string AdminPassword = "asd"; // Пароль для администратора
 
         public start_menu()
         {
@@ -51,7 +51,7 @@ namespace игра
                 status.Text = "Добро пожаловать, администратор!";
                 ADM_menu heh = new ADM_menu();
                 heh.Show();
-                this.Hide();
+                //this.Hide();
                 return;
             }
 
@@ -60,7 +60,7 @@ namespace игра
                 status.Text = "Вход выполнен успешно!";
                 users_level ul = new users_level();
                 ul.Show();
-                this.Hide();
+                //this.Hide();
             }
             else
             {

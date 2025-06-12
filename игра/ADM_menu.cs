@@ -93,6 +93,13 @@ namespace игра
                 MessageBox.Show("Ошибка при сохранении пользователей: " + ex.Message);
             }
         }
+
+        private void back_Click(object sender, EventArgs e)
+        {
+            start_menu back = new start_menu();
+            back.Show();
+            //Hide();
+        }
     }
 
     public class User

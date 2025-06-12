@@ -33,53 +33,76 @@ namespace игра
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ADM_menu));
-            levels = new CheckedListBox();
             users = new CheckedListBox();
             del_user = new System.Windows.Forms.Button();
+            userBindingSource = new BindingSource(components);
+            label1 = new Label();
+            back = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)userBindingSource).BeginInit();
             SuspendLayout();
-            // 
-            // levels
-            // 
-            levels.FormattingEnabled = true;
-            resources.ApplyResources(levels, "levels");
-            levels.Name = "levels";
-            levels.SelectedIndexChanged += levels_SelectedIndexChanged;
             // 
             // users
             // 
             users.FormattingEnabled = true;
             resources.ApplyResources(users, "users");
             users.Name = "users";
+            users.Tag = "";
             users.SelectedIndexChanged += users_SelectedIndexChanged;
             // 
             // del_user
             // 
+            del_user.FlatAppearance.BorderColor = Color.Red;
+            del_user.FlatAppearance.BorderSize = 10;
+            del_user.FlatAppearance.MouseDownBackColor = Color.Red;
+            del_user.FlatAppearance.MouseOverBackColor = Color.Red;
             resources.ApplyResources(del_user, "del_user");
             del_user.Name = "del_user";
             del_user.UseVisualStyleBackColor = true;
             del_user.Click += del_user_Click;
+            // 
+            // userBindingSource
+            // 
+            userBindingSource.DataSource = typeof(User);
+            // 
+            // label1
+            // 
+            resources.ApplyResources(label1, "label1");
+            label1.BackColor = Color.White;
+            label1.Name = "label1";
+            // 
+            // back
+            // 
+            resources.ApplyResources(back, "back");
+            back.Name = "back";
+            back.UseVisualStyleBackColor = true;
+            back.Click += back_Click;
             // 
             // ADM_menu
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Resources.bg;
+            Controls.Add(back);
+            Controls.Add(label1);
             Controls.Add(del_user);
             Controls.Add(users);
-            Controls.Add(levels);
             MaximizeBox = false;
             MdiChildrenMinimizedAnchorBottom = false;
             MinimizeBox = false;
             Name = "ADM_menu";
             ShowIcon = false;
+            ((System.ComponentModel.ISupportInitialize)userBindingSource).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
-
-        private CheckedListBox levels;
         private CheckedListBox users;
         private System.Windows.Forms.Button del_user;
+        private BindingSource userBindingSource;
+        private Label label1;
+        private System.Windows.Forms.Button back;
     }
 }
