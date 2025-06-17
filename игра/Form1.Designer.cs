@@ -32,6 +32,7 @@
             pictureBox1 = new PictureBox();
             timer1 = new System.Windows.Forms.Timer(components);
             countfood = new Label();
+            timer2 = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -62,6 +63,12 @@
             countfood.TabIndex = 2;
             countfood.Text = "0";
             // 
+            // timer2
+            // 
+            timer2.Enabled = true;
+            timer2.Interval = 10;
+            timer2.Tick += timer2_Tick;
+            // 
             // game
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -88,5 +95,6 @@
         private PictureBox pictureBox1;
         private System.Windows.Forms.Timer timer1;
         private Label countfood;
+        private System.Windows.Forms.Timer timer2;
     }
 }

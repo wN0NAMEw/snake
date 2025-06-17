@@ -75,8 +75,8 @@ namespace игра
 
             return File.ReadLines(UsersFilePath).Any(line =>
             {
-                    var parts = line.Split(';');
-                    return parts.Length >= 2 && parts[0] == username && parts[1] == password;
+                var parts = line.Split(';');
+                return parts.Length >= 2 && parts[0] == username && parts[1] == password;
             });
         }
 
@@ -91,6 +91,11 @@ namespace игра
         }
 
         private void status_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void roundButton1_Click(object sender, EventArgs e)
         {
 
         }

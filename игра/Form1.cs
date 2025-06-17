@@ -2,13 +2,17 @@ using System.Reflection;
 using System.Reflection.Emit;
 using System.Security;
 using System.Windows.Forms;
+using System.IO;
 
 namespace игра
 {
+
     public partial class game : Form
     {
+
         int count = 0;
-        private int speed = 600;
+        int ttm;
+        int speed = 500;
         int nap = 1;
         private Image originalImage;
         private List<PictureBox> snakeSegments = new List<PictureBox>();
@@ -16,8 +20,9 @@ namespace игра
         private bool isGameOver = false;
         private PictureBox food;
 
-        public game()
+        public game(int kfc)
         {
+            ttm = kfc;
             InitializeComponent();
             pictureBox1.Image = Properties.Resources.head;
             originalImage = pictureBox1.Image;
@@ -62,11 +67,11 @@ namespace игра
 
                 newLocation = new Point(x, y);
 
-                
+
                 bool isOnSnake = snakeSegments.Any(segment => segment.Location == newLocation);
 
                 if (!isOnSnake)
-                   break;
+                    break;
             }
 
             food = new PictureBox
@@ -116,19 +121,11 @@ namespace игра
             }
 
             // Проверка на выход за границы
-            if (headPosition.Y < 51 || headPosition.Y >= ClientSize.Height-51 ||
-                headPosition.X < 51 || headPosition.X >= ClientSize.Width-51)
+            if (headPosition.Y < 51 || headPosition.Y >= ClientSize.Height - 51 ||
+                headPosition.X < 51 || headPosition.X >= ClientSize.Width - 51)
             {
                 GameOver();
                 return;
-            }
-
-            // съедание еды
-            if (pictureBox1.Bounds.IntersectsWith(food.Bounds))
-            {
-                count++;
-                addseg();
-                CreateFood();
             }
 
             // столкновение с хвостом
@@ -141,6 +138,7 @@ namespace игра
                 }
             }
 
+
             // обновляение положения сегментов змейки
             for (int i = snakeSegments.Count - 1; i > 0; i--)
             {
@@ -148,6 +146,7 @@ namespace игра
                 snakeSegments[i].Image = Properties.Resources.segment;
             }
             pictureBox1.Location = headPosition;
+
         }
         void Form1_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -204,6 +203,10 @@ namespace игра
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+            StreamReader sr = new StreamReader("settings.txt");
+            string line = sr.ReadLine();
+            speed = Convert.ToInt32(line);
+
             if (originalImage != null)
             {
                 pictureBox1.Image = RotateImage(originalImage, 90);
@@ -214,21 +217,42 @@ namespace игра
             addseg();
             CreateFood();
             timer1.Enabled = true;
+            timer2.Enabled = true;
+            timer2.Interval = 1;
+
+        }
+        public void prov()
+        {
+
+            // съедание еды
+            if (pictureBox1.Bounds.IntersectsWith(food.Bounds))
+            {
+                count++;
+                addseg();
+                CreateFood();
+            }
+
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
-            timer1.Interval = speed;
+
+            timer1.Interval = speed * ttm;
             countfood.Text = $"{count}";
             move_snake();
         }
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            addseg();
+            //addseg();
         }
         private void GameOver()
         {
             isGameOver = true;
             MessageBox.Show("Игра окончена!");
+        }
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            
+            prov();
         }
     }
 }

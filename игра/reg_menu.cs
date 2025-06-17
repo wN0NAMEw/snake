@@ -13,8 +13,6 @@ namespace игра
     public partial class reg_menu : Form
     {
         private const string UsersFilePath = "users.txt";
-        private const string AdminUsername = "admin"; // Имя администратора
-        private const string AdminPassword = "admin"; // Пароль для администратора
         public reg_menu()
         {
             InitializeComponent();
@@ -57,7 +55,7 @@ namespace игра
                 return;
             }
 
-            File.AppendAllText(UsersFilePath, $"{UN};{PW};0{Environment.NewLine}");
+            File.AppendAllText(UsersFilePath, $"{UN};{PW};0;0;0;0;0{Environment.NewLine}");
             status.Text = "Регистрация прошла успешно!";
             this.Hide();
         }
