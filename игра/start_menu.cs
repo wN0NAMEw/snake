@@ -58,7 +58,7 @@ namespace игра
             if (ValidateUser(UN, PW))
             {
                 status.Text = "Вход выполнен успешно!";
-                users_level ul = new users_level();
+                users_level ul = new users_level(UN);
                 ul.Show();
                 //this.Hide();
             }

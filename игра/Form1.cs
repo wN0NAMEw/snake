@@ -3,15 +3,18 @@ using System.Reflection.Emit;
 using System.Security;
 using System.Windows.Forms;
 using System.IO;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using Microsoft.VisualBasic.ApplicationServices;
 
 namespace игра
 {
 
     public partial class game : Form
     {
-
+        List<string> linii;
         int count = 0;
         int ttm;
+        string Naame;
         int speed = 500;
         int nap = 1;
         private Image originalImage;
@@ -20,9 +23,10 @@ namespace игра
         private bool isGameOver = false;
         private PictureBox food;
 
-        public game(int kfc)
+        public game(int kfc, string name)
         {
             ttm = kfc;
+            Naame = name;
             InitializeComponent();
             pictureBox1.Image = Properties.Resources.head;
             originalImage = pictureBox1.Image;
@@ -56,23 +60,20 @@ namespace игра
 
             Random random = new Random();
             Point newLocation;
+            bool validPosition;
 
-            while (true)
+            List<Point> occupiedPositions = snakeSegments.Select(seg => seg.Location).ToList();
+
+            do
             {
-                int maxX = (ClientSize.Width - 2 * 51) / segmentSize;
-                int maxY = (ClientSize.Height - 2 * 51) / segmentSize;
-
-                int x = 51 + random.Next(0, maxX) * segmentSize;
-                int y = 51 + random.Next(0, maxY) * segmentSize;
-
+                int maxX = (ClientSize.Width - 2 * segmentSize) / segmentSize;
+                int maxY = (ClientSize.Height - 2 * segmentSize) / segmentSize;
+                int x = segmentSize + random.Next(0, maxX) * segmentSize;
+                int y = segmentSize + random.Next(0, maxY) * segmentSize;
                 newLocation = new Point(x, y);
+                validPosition = !occupiedPositions.Contains(newLocation);
 
-
-                bool isOnSnake = snakeSegments.Any(segment => segment.Location == newLocation);
-
-                if (!isOnSnake)
-                    break;
-            }
+            } while (!validPosition);
 
             food = new PictureBox
             {
@@ -83,6 +84,7 @@ namespace игра
             };
 
             Controls.Add(food);
+            food.BringToFront();
         }
         private Image RotateImage(Image img, float angle)
         {
@@ -138,12 +140,37 @@ namespace игра
                 }
             }
 
+            var sk = Properties.Resources.segment;
+
+            for (int j = 0; j < linii.Count; j++)
+            {
+                string[] parts = linii[j].Split(';');
+                if (parts.Length >= 1 && parts[0] == Naame)
+                {
+                    switch (Convert.ToInt32(parts[6]))
+                    {
+                        case 0:
+                            sk = Properties.Resources.segment;
+                            break;
+                        case 1:
+                            sk = Properties.Resources.rgb;
+                            break;
+                        case 2:
+                            sk = Properties.Resources.rickroll_roll;
+                            break;
+                        case 3:
+                            sk = Properties.Resources.segment;
+                            break;
+                    }
+                    break;
+                }
+            }
 
             // обновляение положения сегментов змейки
             for (int i = snakeSegments.Count - 1; i > 0; i--)
             {
                 snakeSegments[i].Location = snakeSegments[i - 1].Location;
-                snakeSegments[i].Image = Properties.Resources.segment;
+                snakeSegments[i].Image = sk;
             }
             pictureBox1.Location = headPosition;
 
@@ -203,6 +230,15 @@ namespace игра
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+            string filePath = "users.txt";
+            List<string> lines = new List<string>();
+
+            if (File.Exists(filePath))
+            {
+                lines = File.ReadAllLines(filePath).ToList();
+            }
+            linii = lines;
+
             StreamReader sr = new StreamReader("settings.txt");
             string line = sr.ReadLine();
             speed = Convert.ToInt32(line);
@@ -237,21 +273,62 @@ namespace игра
         {
 
             timer1.Interval = speed * ttm;
-            countfood.Text = $"{count}";
             move_snake();
         }
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             //addseg();
         }
+        private bool gameOverHandled = false;
         private void GameOver()
         {
+            if (gameOverHandled) return;
+            gameOverHandled = true;
+
+            bool scoreUpdated = false;
+
+            for (int i = 0; i < linii.Count; i++)
+            {
+                string[] parts = linii[i].Split(';');
+                if (parts.Length >= 1 && parts[0] == Naame)
+                {
+                    int currentScore = parts.Length >= 3 ? Convert.ToInt32(parts[2]) : 0;
+                    if (count > currentScore)
+                    {
+                        string newLine = $"{parts[0]};{parts[1]};{count};{parts[3]};{parts[4]};{parts[5]};{parts[6]}";
+                        linii[i] = newLine;
+                        scoreUpdated = true;
+                    }
+                    break;
+                }
+            }
+
+            try
+            {
+                File.WriteAllLines("users.txt", linii);
+                if (scoreUpdated)
+                {
+                    MessageBox.Show($"Игра окончена! Новый рекорд: {count} очков", "Результат",
+                                  MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show($"Игра окончена! Ваш счет: {count} очков", "Результат",
+                                  MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка при сохранении результатов: {ex.Message}", "Ошибка",
+                              MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
             isGameOver = true;
-            MessageBox.Show("Игра окончена!");
+            Hide();
         }
         private void timer2_Tick(object sender, EventArgs e)
         {
-            
+            countfood.Text = $"{count}";
             prov();
         }
     }
