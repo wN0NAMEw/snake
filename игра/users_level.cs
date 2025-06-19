@@ -18,6 +18,7 @@ namespace игра
         int kfc = 0;
         string name;
 
+
         public users_level(string UN)
         {
             InitializeComponent();
@@ -52,24 +53,57 @@ namespace игра
         }
         private void lvle2_Click(object sender, EventArgs e)
         {
-            kfc = 3;
-            game bbk = new game(kfc, name);
-            bbk.Show();
-            //Hide();
+            for (int i = 0; i < linii.Count; i++)
+            {
+                string[] parts = linii[i].Split(';');
+                if (parts.Length >= 1 && parts[0] == name)
+                {
+                    if (Convert.ToInt32(parts[3]) > 0)
+                    {
+                        kfc = 3;
+                        level2 bbk = new level2(kfc, name);
+                        bbk.Show();
+                        //Hide();
+                    }
+                    break;
+                }
+            }
         }
         private void lvle3_Click(object sender, EventArgs e)
         {
-            kfc = 3;
-            game bbk = new game(kfc, name);
-            bbk.Show();
-            //Hide();
+            for (int i = 0; i < linii.Count; i++)
+            {
+                string[] parts = linii[i].Split(';');
+                if (parts.Length >= 1 && parts[0] == name)
+                {
+                    if (Convert.ToInt32(parts[3]) > 1)
+                    {
+                        kfc = 3;
+                        game bbk = new game(kfc, name);
+                        bbk.Show();
+                        //Hide();
+                    }
+                    break;
+                }
+            }
         }
         private void lvle4_Click(object sender, EventArgs e)
         {
-            kfc = 3;
-            game bbk = new game(kfc, name);
-            bbk.Show();
-            //Hide();
+            for (int i = 0; i < linii.Count; i++)
+            {
+                string[] parts = linii[i].Split(';');
+                if (parts.Length >= 1 && parts[0] == name)
+                {
+                    if (Convert.ToInt32(parts[3]) > 2)
+                    {
+                        kfc = 3;
+                        game bbk = new game(kfc, name);
+                        bbk.Show();
+                        //Hide();
+                    }
+                    break;
+                }
+            }
         }
 
         private void lvln1_Click(object sender, EventArgs e)
@@ -81,24 +115,57 @@ namespace игра
         }
         private void lvln2_Click(object sender, EventArgs e)
         {
-            kfc = 2;
-            game bbk = new game(kfc, name);
-            bbk.Show();
-            //Hide();
+            for (int i = 0; i < linii.Count; i++)
+            {
+                string[] parts = linii[i].Split(';');
+                if (parts.Length >= 1 && parts[0] == name)
+                {
+                    if (Convert.ToInt32(parts[4]) > 0)
+                    {
+                        kfc = 2;
+                        game bbk = new game(kfc, name);
+                        bbk.Show();
+                        //Hide();
+                    }
+                    break;
+                }
+            }
         }
         private void lvln3_Click(object sender, EventArgs e)
         {
-            kfc = 2;
-            game bbk = new game(kfc, name);
-            bbk.Show();
-            //Hide();
+            for (int i = 0; i < linii.Count; i++)
+            {
+                string[] parts = linii[i].Split(';');
+                if (parts.Length >= 1 && parts[0] == name)
+                {
+                    if (Convert.ToInt32(parts[4]) > 1)
+                    {
+                        kfc = 2;
+                        game bbk = new game(kfc, name);
+                        bbk.Show();
+                        //Hide();
+                    }
+                    break;
+                }
+            }
         }
         private void lvln4_Click(object sender, EventArgs e)
         {
-            kfc = 2;
-            game bbk = new game(kfc, name);
-            bbk.Show();
-            //Hide();
+            for (int i = 0; i < linii.Count; i++)
+            {
+                string[] parts = linii[i].Split(';');
+                if (parts.Length >= 1 && parts[0] == name)
+                {
+                    if (Convert.ToInt32(parts[4]) > 2)
+                    {
+                        kfc = 2;
+                        game bbk = new game(kfc, name);
+                        bbk.Show();
+                        //Hide();
+                    }
+                    break;
+                }
+            }
         }
 
         private void lvlH1_Click(object sender, EventArgs e)
@@ -110,24 +177,57 @@ namespace игра
         }
         private void lvlH2_Click(object sender, EventArgs e)
         {
-            kfc = 1;
-            game bbk = new game(kfc, name);
-            bbk.Show();
-            //Hide();
+            for (int i = 0; i < linii.Count; i++)
+            {
+                string[] parts = linii[i].Split(';');
+                if (parts.Length >= 1 && parts[0] == name)
+                {
+                    if (Convert.ToInt32(parts[5]) > 0)
+                    {
+                        kfc = 1;
+                        game bbk = new game(kfc, name);
+                        bbk.Show();
+                        //Hide();
+                    }
+                    break;
+                }
+            }
         }
         private void lvlH3_Click(object sender, EventArgs e)
         {
-            kfc = 1;
-            game bbk = new game(kfc, name);
-            bbk.Show();
-            //Hide();
+            for (int i = 0; i < linii.Count; i++)
+            {
+                string[] parts = linii[i].Split(';');
+                if (parts.Length >= 1 && parts[0] == name)
+                {
+                    if (Convert.ToInt32(parts[5]) > 1)
+                    {
+                        kfc = 1;
+                        game bbk = new game(kfc, name);
+                        bbk.Show();
+                        //Hide();
+                    }
+                    break;
+                }
+            }
         }
         private void lvlH4_Click(object sender, EventArgs e)
         {
-            kfc = 1;
-            game bbk = new game(kfc, name);
-            bbk.Show();
-            //Hide();
+            for (int i = 0; i < linii.Count; i++)
+            {
+                string[] parts = linii[i].Split(';');
+                if (parts.Length >= 1 && parts[0] == name)
+                {
+                    if (Convert.ToInt32(parts[5]) > 2)
+                    {
+                        kfc = 1;
+                        game bbk = new game(kfc, name);
+                        bbk.Show();
+                        //Hide();
+                    }
+                    break;
+                }
+            }
         }
 
         private void users_level_Load(object sender, EventArgs e)
@@ -141,7 +241,6 @@ namespace игра
                 linii = File.ReadAllLines(filePath).ToList();
             }
 
-            // Теперь можно работать с linii
             for (int i = 0; i < linii.Count; i++)
             {
                 string[] parts = linii[i].Split(';');
