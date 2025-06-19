@@ -1,19 +1,20 @@
-using System.Reflection;
-using System.Reflection.Emit;
-using System.Security;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using Microsoft.VisualBasic.ApplicationServices;
-using System.CodeDom.Compiler;
+using System.Xml.Linq;
 
 namespace игра
 {
-
-    public partial class game : Form
+    public partial class level1 : Form
     {
         List<string> linii;
-        int count = 0;
+        int lvleid = 1;
         int ttm;
         string Naame;
         int speed = 500;
@@ -23,80 +24,17 @@ namespace игра
         private const int segmentSize = 51;
         private bool isGameOver = false;
         private PictureBox food;
-
-        public game(int kfc, string name)
+        public level1(int kfc, string name)
         {
+            InitializeComponent();
             ttm = kfc;
             Naame = name;
-            InitializeComponent();
+
             pictureBox1.Image = Properties.Resources.head;
             originalImage = pictureBox1.Image;
             KeyPreview = true;
+            this.KeyPress += Form1_KeyPress;
             snakeSegments.Add(pictureBox1);
-        }
-        private void addseg()
-        {
-            PictureBox newSegment = new PictureBox
-            {
-                Size = new Size(segmentSize, segmentSize),
-                Location = new Point(pictureBox1.Location.X, pictureBox1.Location.Y),
-                Image = RotateImage(originalImage, 0),
-                SizeMode = PictureBoxSizeMode.StretchImage
-            };
-            Controls.Add(newSegment);
-            snakeSegments.Add(newSegment);
-
-            if (snakeSegments.Count % 3 == 0)
-            {
-                speed = Math.Max(5, speed - 10);
-            }
-        }
-        private void CreateFood()
-        {
-            if (food != null)
-            {
-                Controls.Remove(food);
-                food.Dispose();
-            }
-
-            Random random = new Random();
-            Point newLocation;
-            bool validPosition;
-
-            List<Point> occupiedPositions = snakeSegments.Select(seg => seg.Location).ToList();
-            bool run = true;
-            do
-            {
-                int temp = 0;
-                int maxX = (ClientSize.Width - 2 * segmentSize) / segmentSize;
-                int maxY = (ClientSize.Height - 2 * segmentSize) / segmentSize;
-                int x = segmentSize + random.Next(0, maxX) * segmentSize;
-                int y = segmentSize + random.Next(0, maxY) * segmentSize;
-                newLocation = new Point(x, y);
-                for(int i = 0; i < occupiedPositions.Count; i++)
-                {
-                    if (newLocation != occupiedPositions[i])
-                    {
-                        temp++;
-                    }
-                }
-                if (temp == occupiedPositions.Count)
-                {
-                    run = false;
-                }
-
-            } while (run);
-
-            food = new PictureBox
-            {
-                Size = new Size(segmentSize, segmentSize),
-                Location = newLocation,
-                Image = Properties.Resources.food,
-                SizeMode = PictureBoxSizeMode.StretchImage
-            };
-
-            Controls.Add(food);
-            food.BringToFront();
         }
         private Image RotateImage(Image img, float angle)
         {
@@ -115,6 +53,18 @@ namespace игра
         void move_snake()
         {
             if (isGameOver) return;
+
+            foreach (Control control in Controls)
+            {
+                if (control is PictureBox pic && pic.Tag?.ToString() == "lava")
+                {
+                    if (pictureBox1.Bounds.IntersectsWith(pic.Bounds))
+                    {
+                        GameOver();
+                        return;
+                    }
+                }
+            }
 
             Point headPosition = pictureBox1.Location;
 
@@ -246,7 +196,71 @@ namespace игра
                 }
             }
         }
-        private void Form1_Load(object sender, EventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            //addseg();
+        }
+        private bool gameOverHandled = false;
+        private void GameOver()
+        {
+            if (gameOverHandled) return;
+            gameOverHandled = true;
+
+            bool scoreUpdated = false;
+
+            for (int i = 0; i < linii.Count; i++)
+            {
+                string[] parts = linii[i].Split(';');
+                if (parts.Length >= 1 && parts[0] == Naame)
+                {
+                    int currentScore = parts.Length >= 3 ? Convert.ToInt32(parts[2]) : 0;
+
+                    string newLine = $"{parts[0]};{parts[1]};{parts[2]};{parts[3]};{parts[4]};{parts[5]};{parts[6]}";
+                    linii[i] = newLine;
+
+                    break;
+                }
+            }
+
+
+            MessageBox.Show($"Игра окончена!");
+            isGameOver = true;
+            Hide();
+        }
+        private void timer1_Tick_1(object sender, EventArgs e)
+        {
+            timer1.Interval = speed * ttm;
+
+            if (pictureBox1.Bounds.IntersectsWith(winblok.Bounds))
+            {
+                WinGame();
+                timer2.Stop();
+                return;
+            }
+
+
+
+            move_snake();
+
+        }
+        private void addseg()
+        {
+            PictureBox newSegment = new PictureBox
+            {
+                Size = new Size(segmentSize, segmentSize),
+                Location = new Point(pictureBox1.Location.X, pictureBox1.Location.Y),
+                Image = RotateImage(originalImage, 0),
+                SizeMode = PictureBoxSizeMode.StretchImage
+            };
+            Controls.Add(newSegment);
+            snakeSegments.Add(newSegment);
+
+            if (snakeSegments.Count % 3 == 0)
+            {
+                speed = Math.Max(5, speed - 10);
+            }
+        }
+        private void level1_Load(object sender, EventArgs e)
         {
             string filePath = "users.txt";
             List<string> lines = new List<string>();
@@ -269,85 +283,68 @@ namespace игра
             addseg();
             addseg();
             addseg();
-            CreateFood();
             timer1.Enabled = true;
-            timer2.Enabled = true;
-            timer2.Interval = 1;
-
         }
-        public void prov()
+        private void WinGame()
         {
+            if (isGameOver) return;
 
-            // съедание еды
-            if (pictureBox1.Bounds.IntersectsWith(food.Bounds))
-            {
-                count++;
-                addseg();
-                CreateFood();
-            }
+            isGameOver = true;
+            timer1.Enabled = false;
 
-        }
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-
-            timer1.Interval = speed * ttm;
-            move_snake();
-        }
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            //addseg();
-        }
-        private bool gameOverHandled = false;
-        private void GameOver()
-        {
-            if (gameOverHandled) return;
-            gameOverHandled = true;
-
-            bool scoreUpdated = false;
 
             for (int i = 0; i < linii.Count; i++)
             {
                 string[] parts = linii[i].Split(';');
+                int le = lvleid;
+                if (Convert.ToInt32(parts[3]) >= le)
+                {
+                    le = Convert.ToInt32(parts[3]);
+                }
                 if (parts.Length >= 1 && parts[0] == Naame)
                 {
-                    int currentScore = parts.Length >= 3 ? Convert.ToInt32(parts[2]) : 0;
-                    if (count > currentScore)
-                    {
-                        string newLine = $"{parts[0]};{parts[1]};{count};{parts[3]};{parts[4]};{parts[5]};{parts[6]}";
-                        linii[i] = newLine;
-                        scoreUpdated = true;
-                    }
+                    string newLine = $"{parts[0]};{parts[1]};{parts[2]};{le};{parts[4]};{parts[5]};{parts[6]}";
+                    linii[i] = newLine;
                     break;
                 }
             }
+            File.WriteAllLines("users.txt", linii);
+            MessageBox.Show("Поздравляем! Вы победили!", "Победа",
+                          MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            try
-            {
-                File.WriteAllLines("users.txt", linii);
-                if (scoreUpdated)
-                {
-                    MessageBox.Show($"Игра окончена! Новый рекорд: {count} очков", "Результат",
-                                  MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show($"Игра окончена! Ваш счет: {count} очков", "Результат",
-                                  MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Ошибка при сохранении результатов: {ex.Message}", "Ошибка",
-                              MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            isGameOver = true;
-            Hide();
+            Close();
         }
+        private void winblok_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void timer2_Tick(object sender, EventArgs e)
         {
-            countfood.Text = $"{count}";
-            prov();
+            if (pictureBox1.Bounds.IntersectsWith(winblok.Bounds))
+            {
+                WinGame();
+                timer2.Stop();
+                return;
+            }
+
+
+            foreach (Control control in Controls)
+            {
+                if (control is PictureBox pic && pic.Tag?.ToString() == "lava")
+                {
+                    if (pictureBox1.Bounds.IntersectsWith(pic.Bounds))
+                    {
+                        GameOver();
+                        return;
+                    }
+                }
+            }
+
+
+
         }
     }
 }
+    
+

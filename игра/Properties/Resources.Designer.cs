@@ -73,6 +73,16 @@ namespace игра.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap block {
+            get {
+                object obj = ResourceManager.GetObject("block", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap food {
             get {
                 object obj = ResourceManager.GetObject("food", resourceCulture);
@@ -86,6 +96,16 @@ namespace игра.Properties {
         internal static System.Drawing.Bitmap head {
             get {
                 object obj = ResourceManager.GetObject("head", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lava {
+            get {
+                object obj = ResourceManager.GetObject("lava", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -116,6 +136,36 @@ namespace игра.Properties {
         internal static System.Drawing.Bitmap rickroll_roll {
             get {
                 object obj = ResourceManager.GetObject("rickroll-roll", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap seg2 {
+            get {
+                object obj = ResourceManager.GetObject("seg2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap seg3 {
+            get {
+                object obj = ResourceManager.GetObject("seg3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap seg4 {
+            get {
+                object obj = ResourceManager.GetObject("seg4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

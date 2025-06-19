@@ -89,6 +89,7 @@ namespace игра
             button34 = new System.Windows.Forms.Button();
             button35 = new System.Windows.Forms.Button();
             button36 = new System.Windows.Forms.Button();
+            label5 = new Label();
             SuspendLayout();
             // 
             // skins
@@ -97,6 +98,7 @@ namespace игра
             resources.ApplyResources(skins, "skins");
             skins.Name = "skins";
             skins.UseVisualStyleBackColor = false;
+            skins.Click += skins_Click;
             // 
             // back
             // 
@@ -487,11 +489,19 @@ namespace игра
             button36.Name = "button36";
             button36.UseVisualStyleBackColor = false;
             // 
+            // label5
+            // 
+            resources.ApplyResources(label5, "label5");
+            label5.BackColor = Color.FromArgb(252, 228, 95);
+            label5.Name = "label5";
+            label5.Click += label5_Click;
+            // 
             // users_level
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Resources.bg;
+            Controls.Add(label5);
             Controls.Add(button25);
             Controls.Add(button26);
             Controls.Add(button27);
@@ -615,5 +625,6 @@ namespace игра
         private System.Windows.Forms.Button button34;
         private System.Windows.Forms.Button button35;
         private System.Windows.Forms.Button button36;
+        private Label label5;
     }
 }

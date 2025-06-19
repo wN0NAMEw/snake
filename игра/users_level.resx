@@ -145,7 +145,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;skins.ZOrder" xml:space="preserve">
-    <value>54</value>
+    <value>55</value>
   </data>
   <data name="back.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -175,7 +175,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;back.ZOrder" xml:space="preserve">
-    <value>53</value>
+    <value>54</value>
   </data>
   <data name="levelBASEbt.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -208,7 +208,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;levelBASEbt.ZOrder" xml:space="preserve">
-    <value>52</value>
+    <value>53</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -238,7 +238,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>51</value>
+    <value>52</value>
   </data>
   <data name="lvle1.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -268,7 +268,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lvle1.ZOrder" xml:space="preserve">
-    <value>50</value>
+    <value>51</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -301,7 +301,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>49</value>
+    <value>50</value>
   </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -334,7 +334,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>48</value>
+    <value>49</value>
   </data>
   <data name="label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -367,7 +367,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>47</value>
+    <value>48</value>
   </data>
   <data name="lvle2.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -397,7 +397,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lvle2.ZOrder" xml:space="preserve">
-    <value>46</value>
+    <value>47</value>
   </data>
   <data name="lvle3.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -427,7 +427,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lvle3.ZOrder" xml:space="preserve">
-    <value>45</value>
+    <value>46</value>
   </data>
   <data name="lvle4.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -457,7 +457,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lvle4.ZOrder" xml:space="preserve">
-    <value>44</value>
+    <value>45</value>
   </data>
   <data name="lvln4.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -487,7 +487,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lvln4.ZOrder" xml:space="preserve">
-    <value>40</value>
+    <value>41</value>
   </data>
   <data name="lvln3.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -517,7 +517,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lvln3.ZOrder" xml:space="preserve">
-    <value>41</value>
+    <value>42</value>
   </data>
   <data name="lvln2.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -547,7 +547,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lvln2.ZOrder" xml:space="preserve">
-    <value>42</value>
+    <value>43</value>
   </data>
   <data name="lvln1.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -577,7 +577,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lvln1.ZOrder" xml:space="preserve">
-    <value>43</value>
+    <value>44</value>
   </data>
   <data name="lvlH4.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -607,7 +607,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lvlH4.ZOrder" xml:space="preserve">
-    <value>36</value>
+    <value>37</value>
   </data>
   <data name="lvlH3.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -637,7 +637,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lvlH3.ZOrder" xml:space="preserve">
-    <value>37</value>
+    <value>38</value>
   </data>
   <data name="lvlH2.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -667,7 +667,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lvlH2.ZOrder" xml:space="preserve">
-    <value>38</value>
+    <value>39</value>
   </data>
   <data name="lvlH1.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -697,7 +697,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lvlH1.ZOrder" xml:space="preserve">
-    <value>39</value>
+    <value>40</value>
   </data>
   <data name="button1.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -727,7 +727,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
-    <value>24</value>
+    <value>25</value>
   </data>
   <data name="button2.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -757,7 +757,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;button2.ZOrder" xml:space="preserve">
-    <value>25</value>
+    <value>26</value>
   </data>
   <data name="button3.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -787,7 +787,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;button3.ZOrder" xml:space="preserve">
-    <value>26</value>
+    <value>27</value>
   </data>
   <data name="button4.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -817,7 +817,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;button4.ZOrder" xml:space="preserve">
-    <value>27</value>
+    <value>28</value>
   </data>
   <data name="button5.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -847,7 +847,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;button5.ZOrder" xml:space="preserve">
-    <value>28</value>
+    <value>29</value>
   </data>
   <data name="button6.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -877,7 +877,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;button6.ZOrder" xml:space="preserve">
-    <value>29</value>
+    <value>30</value>
   </data>
   <data name="button7.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -907,7 +907,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;button7.ZOrder" xml:space="preserve">
-    <value>30</value>
+    <value>31</value>
   </data>
   <data name="button8.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -937,7 +937,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;button8.ZOrder" xml:space="preserve">
-    <value>31</value>
+    <value>32</value>
   </data>
   <data name="button9.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -967,7 +967,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;button9.ZOrder" xml:space="preserve">
-    <value>32</value>
+    <value>33</value>
   </data>
   <data name="button10.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -997,7 +997,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;button10.ZOrder" xml:space="preserve">
-    <value>33</value>
+    <value>34</value>
   </data>
   <data name="button11.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -1027,7 +1027,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;button11.ZOrder" xml:space="preserve">
-    <value>34</value>
+    <value>35</value>
   </data>
   <data name="button12.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -1057,7 +1057,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;button12.ZOrder" xml:space="preserve">
-    <value>35</value>
+    <value>36</value>
   </data>
   <data name="button13.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -1087,7 +1087,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;button13.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="button14.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -1117,7 +1117,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;button14.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="button15.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -1147,7 +1147,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;button15.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>15</value>
   </data>
   <data name="button16.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -1177,7 +1177,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;button16.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>16</value>
   </data>
   <data name="button17.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -1207,7 +1207,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;button17.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>17</value>
   </data>
   <data name="button18.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -1237,7 +1237,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;button18.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>18</value>
   </data>
   <data name="button19.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -1267,7 +1267,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;button19.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>19</value>
   </data>
   <data name="button20.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -1297,7 +1297,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;button20.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>20</value>
   </data>
   <data name="button21.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -1327,7 +1327,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;button21.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>21</value>
   </data>
   <data name="button22.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -1357,7 +1357,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;button22.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>22</value>
   </data>
   <data name="button23.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -1387,7 +1387,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;button23.ZOrder" xml:space="preserve">
-    <value>22</value>
+    <value>23</value>
   </data>
   <data name="button24.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -1417,7 +1417,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;button24.ZOrder" xml:space="preserve">
-    <value>23</value>
+    <value>24</value>
   </data>
   <data name="button25.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -1447,7 +1447,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;button25.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="button26.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -1477,7 +1477,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;button26.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="button27.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -1507,7 +1507,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;button27.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="button28.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -1537,7 +1537,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;button28.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="button29.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -1567,7 +1567,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;button29.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="button30.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -1597,7 +1597,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;button30.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="button31.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -1627,7 +1627,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;button31.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="button32.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -1657,7 +1657,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;button32.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="button33.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -1687,7 +1687,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;button33.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="button34.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -1717,7 +1717,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;button34.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="button35.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -1747,7 +1747,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;button35.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="button36.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -1777,7 +1777,40 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;button36.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
+  </data>
+  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label5.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 25pt</value>
+  </data>
+  <data name="label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>190, 97</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>264, 57</value>
+  </data>
+  <data name="label5.TabIndex" type="System.Int32, mscorlib">
+    <value>67</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>ваш рекорд:</value>
+  </data>
+  <data name="&gt;&gt;label5.Name" xml:space="preserve">
+    <value>label5</value>
+  </data>
+  <data name="&gt;&gt;label5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
